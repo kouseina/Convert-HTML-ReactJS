@@ -12,6 +12,7 @@ import Btn from "../elements/Button";
 import FeatureTile1 from "assets/images/feature-tile-icon-01.svg";
 import FeatureTile2 from "assets/images/feature-tile-icon-02.svg";
 import FeatureTile3 from "assets/images/feature-tile-icon-03.svg";
+import Footer from "parts/Footer";
 
 export default function Homepage() {
   const features = [
@@ -184,6 +185,7 @@ export default function Homepage() {
           </div>
         </Section>
       </main>
+      <Footer />
     </div>
   );
 }
