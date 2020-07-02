@@ -1,5 +1,7 @@
 import React from "react";
 import Section from "elements/Section";
+import Card from "../elements/Card";
+import Lists from "../elements/Lists";
 import Header from "parts/Header";
 import HerroImg from "assets/images/hero-image.png";
 import Fade from "react-reveal/Fade";
@@ -32,6 +34,45 @@ export default function Homepage() {
       title: "Join the system",
       description:
         "A pseudo-Latin text used in webdesign, layout, and printing in place of things to emphasise design.",
+    },
+  ];
+
+  const listPricing = [
+    {
+      price: 27,
+      currencySymbol: "$",
+      description: "Lorem ipsum is a common text",
+      features: [
+        { isChecked: true, content: "Excepteur sint onccaecat velit" },
+        { isChecked: true, content: "Excepteur sint onccaecat velit" },
+        { isChecked: true, content: "Excepteur sint onccaecat velit" },
+        { isChecked: false, content: "Excepteur sint onccaecat velit" },
+        { isChecked: false, content: "Excepteur sint onccaecat velit" },
+      ],
+    },
+    {
+      price: 47,
+      currencySymbol: "$",
+      description: "Lorem ipsum is a common text",
+      features: [
+        { isChecked: true, content: "Excepteur sint onccaecat velit" },
+        { isChecked: true, content: "Excepteur sint onccaecat velit" },
+        { isChecked: true, content: "Excepteur sint onccaecat velit" },
+        { isChecked: true, content: "Excepteur sint onccaecat velit" },
+        { isChecked: false, content: "Excepteur sint onccaecat velit" },
+      ],
+    },
+    {
+      price: 67,
+      currencySymbol: "$",
+      description: "Lorem ipsum is a common text",
+      features: [
+        { isChecked: true, content: "Excepteur sint onccaecat velit" },
+        { isChecked: true, content: "Excepteur sint onccaecat velit" },
+        { isChecked: true, content: "Excepteur sint onccaecat velit" },
+        { isChecked: true, content: "Excepteur sint onccaecat velit" },
+        { isChecked: true, content: "Excepteur sint onccaecat velit" },
+      ],
     },
   ];
 
@@ -97,6 +138,58 @@ export default function Homepage() {
                     the graphic elements of a document or visual presentation.
                   </p>
                 </div>
+              </div>
+              <div class="tiles-wrap">
+                {listPricing.map((list, index) => {
+                  <Card hasShadow>
+                    <div class="pricing-item-content">
+                      <div class="pricing-item-header pb-24 mb-24">
+                        <div class="pricing-item-price mb-4">
+                          <span class="pricing-item-price-currency h2">
+                            {list.currencySymbol}
+                          </span>
+                          <span
+                            class="pricing-item-price-amount h1 pricing-switchable"
+                            data-pricing-monthly="74"
+                            data-pricing-yearly="67"
+                          >
+                            {list.price}
+                          </span>
+                        </div>
+                        <div class="text-xs text-color-low">
+                          {list.description}
+                        </div>
+                      </div>
+                      <div class="pricing-item-features mb-40">
+                        <div class="pricing-item-features-title h6 text-xs text-color-high mb-24">
+                          What’s included
+                        </div>
+                        <ul class="pricing-item-features-list list-reset text-xs mb-32">
+                          <li class="is-checked">
+                            Excepteur sint occaecat velit
+                          </li>
+                          <li class="is-checked">
+                            Excepteur sint occaecat velit
+                          </li>
+                          <li class="is-checked">
+                            Excepteur sint occaecat velit
+                          </li>
+                          <li class="is-checked">
+                            Excepteur sint occaecat velit
+                          </li>
+                          <li class="is-checked">
+                            Excepteur sint occaecat velit
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="pricing-item-cta mb-8">
+                      <a class="button button-primary button-block" href="#">
+                        Start free trial
+                      </a>
+                    </div>
+                  </Card>;
+                })}
               </div>
             </div>
           </div>
