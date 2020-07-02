@@ -7,6 +7,7 @@ import HerroImg from "assets/images/hero-image.png";
 import Fade from "react-reveal/Fade";
 import Clients from "parts/Clients";
 import Feature from "parts/Feature";
+import Btn from "../elements/Button";
 
 import FeatureTile1 from "assets/images/feature-tile-icon-01.svg";
 import FeatureTile2 from "assets/images/feature-tile-icon-02.svg";
@@ -113,9 +114,9 @@ export default function Homepage() {
         </Section>
         <Clients></Clients>
         <Section className="features-tiles">
-          <div class="container">
-            <div class="features-tiles-inner section-inner">
-              <div class="tiles-wrap">
+          <div className="container">
+            <div className="features-tiles-inner section-inner">
+              <div className="tiles-wrap">
                 {features.map((feature, index) => (
                   <Feature
                     key={index}
@@ -127,69 +128,57 @@ export default function Homepage() {
             </div>
           </div>
         </Section>
-        <Section class="pricing">
-          <div class="container">
-            <div class="pricing-inner section-inner has-top-divider">
-              <div class="section-header center-content">
-                <div class="container-xs">
-                  <h2 class="mt-0 mb-16">Simple, transarent pricing</h2>
-                  <p class="m-0">
+        <Section className="pricing">
+          <div className="container">
+            <div className="pricing-inner section-inner has-top-divider">
+              <div className="section-header center-content">
+                <div className="container-xs">
+                  <h2 className="mt-0 mb-16">Simple, transarent pricing</h2>
+                  <p className="m-0">
                     Lorem ipsum is common placeholder text used to demonstrate
                     the graphic elements of a document or visual presentation.
                   </p>
                 </div>
               </div>
-              <div class="tiles-wrap">
-                {listPricing.map((list, index) => {
+              <div className="tiles-wrap">
+                {listPricing.map((list, index) => (
                   <Card hasShadow>
-                    <div class="pricing-item-content">
-                      <div class="pricing-item-header pb-24 mb-24">
-                        <div class="pricing-item-price mb-4">
-                          <span class="pricing-item-price-currency h2">
+                    <div className="pricing-item-content">
+                      <div className="pricing-item-header pb-24 mb-24">
+                        <div className="pricing-item-price mb-4">
+                          <span className="pricing-item-price-currency h2">
                             {list.currencySymbol}
                           </span>
                           <span
-                            class="pricing-item-price-amount h1 pricing-switchable"
+                            className="pricing-item-price-amount h1 pricing-switchable"
                             data-pricing-monthly="74"
                             data-pricing-yearly="67"
                           >
                             {list.price}
                           </span>
                         </div>
-                        <div class="text-xs text-color-low">
+                        <div className="text-xs text-color-low">
                           {list.description}
                         </div>
                       </div>
-                      <div class="pricing-item-features mb-40">
-                        <div class="pricing-item-features-title h6 text-xs text-color-high mb-24">
+                      <div className="pricing-item-features mb-40">
+                        <div className="pricing-item-features-title h6 text-xs text-color-high mb-24">
                           What’s included
                         </div>
-                        <ul class="pricing-item-features-list list-reset text-xs mb-32">
-                          <li class="is-checked">
-                            Excepteur sint occaecat velit
-                          </li>
-                          <li class="is-checked">
-                            Excepteur sint occaecat velit
-                          </li>
-                          <li class="is-checked">
-                            Excepteur sint occaecat velit
-                          </li>
-                          <li class="is-checked">
-                            Excepteur sint occaecat velit
-                          </li>
-                          <li class="is-checked">
-                            Excepteur sint occaecat velit
-                          </li>
-                        </ul>
+                        <Lists
+                          data={list.features}
+                          isSmall
+                          className="pricing-item-features-list mb-32"
+                        ></Lists>
                       </div>
                     </div>
-                    <div class="pricing-item-cta mb-8">
-                      <a class="button button-primary button-block" href="#">
+                    <div className="pricing-item-cta mb-8">
+                      <Btn isPrimary isBlock>
                         Start free trial
-                      </a>
+                      </Btn>
                     </div>
-                  </Card>;
-                })}
+                  </Card>
+                ))}
               </div>
             </div>
           </div>
